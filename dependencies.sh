@@ -2,9 +2,9 @@
 
 echo "* Installing Python GRPC dependencies"
   sudo apt install python3-pip python3-setuptools python3-wheel
-  pip3 install protobuf grpcio grpcio-tools
+  pip3 install protobuf grpcio grpcio-tools requests
   # In case we 'make clean; sudo make test'
-  sudo -H pip3 install protobuf grpcio grpcio-tools
+  sudo pip3 install --no-cache protobuf grpcio grpcio-tools requests
 
 echo "* Installing go dependencies"
   sudo apt install golang
@@ -20,4 +20,6 @@ echo "* Installing gnxi tools"
   done
 
 echo "* Installing FAUCET as root"
-sudo -H pip3 install faucet
+  sudo pip3 install --no-cache --upgrade faucet
+
+echo "* Done installing dependencies"
